@@ -4,17 +4,17 @@ async function main() {
   await prisma.product.createMany({
     data: [
       {
-        name: "Black Shirt",
+        name: "Czarna koszulka",
         description:
-          "A black shirt is a versatile and timeless piece that can be easily styled for any occasion.",
+          "Czarna koszula jest uniwersalnym i ponadczasowym elementem, który można łatwo wystylizować na każdą okazję.",
         price: 30,
         image: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990",
       },
       {
-        name: "White Shirt",
+        name: "Biała koszulka",
         description:
-          "A white shirt is a classic and timeless piece that exudes elegance and versatility.",
-        price: 30,
+          "Biała koszula to klasyczny i ponadczasowy element, który emanuje elegancją i wszechstronnością.",
+        price: 30.5,
         image: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990",
       },
     ],

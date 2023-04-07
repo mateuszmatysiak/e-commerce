@@ -1,7 +1,8 @@
 import { ShoppingBagIcon } from "@heroicons/react/24/outline";
 import { signIn, signOut, useSession } from "next-auth/react";
 import Image from "next/image";
-import userAvatar from "../assets/user.png";
+
+import userAvatar from "@/assets/user.png";
 
 export const AppHeader = () => {
   const { data: session, status } = useSession();
@@ -13,7 +14,15 @@ export const AppHeader = () => {
       {status === "authenticated" ? (
         <>
           <div className="relative w-8 h-8 rounded-full overflow-hidden">
-            <Image src={session.user?.image || userAvatar} alt="User image" fill={true} />
+            <Image
+              src={session.user?.image || userAvatar}
+              alt="User image"
+              fill={true}
+              loading="lazy"
+              sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw"
+            />
           </div>
           <button onClick={() => signOut()}>Wyloguj się</button>
         </>
