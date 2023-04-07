@@ -5,7 +5,7 @@ import GoogleProvider from "next-auth/providers/google";
 
 import prisma from "@/prisma/prisma";
 
-const options: NextAuthOptions = {
+export const authOptions: NextAuthOptions = {
   providers: [
     GoogleProvider({
       clientId: process.env.GOOGLE_ID,
@@ -14,7 +14,10 @@ const options: NextAuthOptions = {
   ],
   adapter: PrismaAdapter(prisma),
   secret: process.env.SECRET,
+  pages: {
+    signIn: "/auth/signin",
+  },
 };
 
-const authHandler: NextApiHandler = (req, res) => NextAuth(req, res, options);
+const authHandler: NextApiHandler = (req, res) => NextAuth(req, res, authOptions);
 export default authHandler;

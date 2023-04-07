@@ -10,7 +10,7 @@ export function formatCurrency(value: Decimal) {
 export const ProductItem = ({ image, name, price, description }: Product) => {
   return (
     <li className="flex flex-col gap-3">
-      <div className="relative h-64 rounded-lg overflow-hidden">
+      <div className="relative h-64 rounded-lg overflow-hidden border border-gray-200 dark:border-slate-800">
         <Image
           src={image}
           alt={name}
@@ -29,10 +29,12 @@ export const ProductItem = ({ image, name, price, description }: Product) => {
           <span>{formatCurrency(price)}</span>
         </div>
 
-        <p className="text-gray-500 line-clamp-2">{description}</p>
+        <p className="text-gray-600 font-light line-clamp-2 dark:text-gray-400">{description}</p>
 
-        <button className="bg-blue-600 w-full p-2 rounded-md text-white">Kup</button>
-        <button className="border border-blue-600 w-full p-2 rounded-md text-blue-600 dark:text-blue-400 dark:border-blue-400">
+        <button className=" w-full p-2 rounded-md bg-blue-600 text-white hover:bg-blue-700">
+          Kup
+        </button>
+        <button className="w-full p-2 rounded-md border border-blue-600 text-blue-600 hover:border-blue-700 hover:text-blue-700">
           Dodaj do koszyka
         </button>
       </div>
