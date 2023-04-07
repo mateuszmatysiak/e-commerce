@@ -1,7 +1,9 @@
 import { Karla } from "next/font/google";
 import { FC, PropsWithChildren } from "react";
 
+import { AppFooter } from "./AppFooter";
 import { AppHeader } from "./AppHeader";
+import { AppMain } from "./AppMain";
 
 const karla = Karla({
   subsets: ["latin"],
@@ -12,7 +14,8 @@ export const AppLayout: FC<PropsWithChildren> = ({ children }) => {
   return (
     <div className={`${karla.variable} font-sans`}>
       <AppHeader />
-      <main className="p-8 pt-16">{children}</main>
+      <AppMain>{children}</AppMain>
+      <AppFooter />
     </div>
   );
 };
