@@ -2,6 +2,7 @@ import Image from "next/image";
 
 import { Product } from "@prisma/client";
 import { Decimal } from "@prisma/client/runtime";
+import { Button } from "./Button";
 
 export function formatCurrency(value: Decimal) {
   return new Intl.NumberFormat("pl", { style: "currency", currency: "PLN" }).format(Number(value));
@@ -31,12 +32,10 @@ export const ProductItem = ({ image, name, price, description }: Product) => {
 
         <p className="text-gray-600 font-light line-clamp-2 dark:text-gray-400">{description}</p>
 
-        <button className=" w-full p-2 rounded-md bg-blue-600 text-white hover:bg-blue-700">
-          Kup
-        </button>
-        <button className="w-full p-2 rounded-md border border-blue-600 text-blue-600 hover:border-blue-700 hover:text-blue-700">
-          Dodaj do koszyka
-        </button>
+        <div className="flex flex-col gap-3">
+          <Button variant="contained">Kup</Button>
+          <Button variant="outlined">Dodaj do koszyka</Button>
+        </div>
       </div>
     </li>
   );

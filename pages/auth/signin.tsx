@@ -1,24 +1,21 @@
 import { GetServerSidePropsContext, InferGetServerSidePropsType } from "next";
 import { getServerSession } from "next-auth";
 import { getProviders, signIn } from "next-auth/react";
+
+import { Button } from "@/components/Button";
 import { authOptions } from "../api/auth/[...nextauth]";
 
 export default function SignInPage({
   providers,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   return (
-    <main className="flex justify-center items-center bg-slate-900 h-screen">
+    <div className="flex flex-col items-center gap-4">
       {Object.values(providers).map((provider) => (
-        <div key={provider.name}>
-          <button
-            className="bg-blue-600 px-8 py-4 rounded-md hover:bg-blue-700"
-            onClick={() => signIn(provider.id)}
-          >
-            Zaloguj się przy użyciu {provider.name}
-          </button>
-        </div>
+        <Button key={provider.name} variant="contained" onClick={() => signIn(provider.id)}>
+          Zaloguj się przy użyciu {provider.name}
+        </Button>
       ))}
-    </main>
+    </div>
   );
 }
 
