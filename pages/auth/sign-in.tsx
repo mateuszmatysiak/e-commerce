@@ -2,12 +2,12 @@ import { GetServerSidePropsContext, InferGetServerSidePropsType } from "next";
 import { getServerSession } from "next-auth";
 import { getProviders, signIn } from "next-auth/react";
 
-import { Button } from "@/components/Button";
-import { authOptions } from "../api/auth/[...nextauth]";
+import { Button } from "@/shared/components/Button";
+import { authOptions } from "@/pages/api/auth/[...nextauth]";
 
-export default function SignInPage({
-  providers,
-}: InferGetServerSidePropsType<typeof getServerSideProps>) {
+type SignInPageProps = InferGetServerSidePropsType<typeof getServerSideProps>;
+
+export default function SignInPage({ providers }: SignInPageProps) {
   return (
     <div className="flex flex-col items-center gap-4">
       {Object.values(providers).map((provider) => (

@@ -4,7 +4,7 @@ import { signOut, useSession } from "next-auth/react";
 import Image from "next/image";
 import { Fragment } from "react";
 
-import userAvatar from "@/assets/user.png";
+import userAvatar from "../assets/user.png";
 
 export const AccountMenu = () => {
   const { data: session } = useSession();

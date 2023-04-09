@@ -5,7 +5,7 @@ import { ThemeProvider } from "next-themes";
 import type { AppProps } from "next/app";
 import { useState } from "react";
 
-import { AppLayout } from "@/components/Layout/AppLayout";
+import { AppLayout } from "@/features/Layout/components/AppLayout";
 import "@/styles/globals.css";
 
 export default function App({ Component, pageProps: { session, ...pageProps } }: AppProps) {

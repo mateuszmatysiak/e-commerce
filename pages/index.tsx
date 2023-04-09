@@ -2,27 +2,23 @@ import { QueryClient, dehydrate } from "@tanstack/react-query";
 import { GetStaticProps } from "next";
 import Head from "next/head";
 
-import { ProductItem } from "@/components/ProductItem";
-import { fetchProducts, useProducts } from "@/hooks/useProducts";
+import { Products } from "@/features/Product/components/Products";
+import { fetchProducts, useProducts } from "@/features/Product/hooks/useProducts";
 
 export default function HomePage() {
-  const { data: products } = useProducts();
+  const { data: products, error } = useProducts();
 
-  // TODO: Error state
+  if (error) return <div className="text-xl text-gray-600 dark:text-gray-400">{error.message}</div>;
 
   return (
     <>
       <Head>
-        <title>E-Commerce NextJS App</title>
-        <meta name="description" content="eCommerce NextJS App" />
+        <title>Sklep internetowy</title>
+        <meta name="description" content="Sklep internetowy" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <ul className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {products.map((product) => {
-          return <ProductItem key={product.id} {...product} />;
-        })}
-      </ul>
+      <Products products={products} />
     </>
   );
 }

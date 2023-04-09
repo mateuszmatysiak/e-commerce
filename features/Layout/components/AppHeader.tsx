@@ -4,8 +4,8 @@ import { signIn, useSession } from "next-auth/react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-import { AccountMenu } from "../AccountMenu";
-import { Button } from "../Button";
+import { Button } from "@/shared/components/Button";
+import { AccountMenu } from "./AccountMenu";
 
 export const AppHeader = () => {
   const { status } = useSession();
@@ -19,7 +19,7 @@ export const AppHeader = () => {
         href="/"
         className="font-light text-gray-600 dark:text-gray-400 hover:text-blue-700 hover:dark:text-blue-700"
       >
-        eCommerce
+        Sklep internetowy
       </Link>
 
       <div className="flex gap-8">

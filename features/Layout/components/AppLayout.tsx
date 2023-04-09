@@ -1,5 +1,5 @@
 import { Karla } from "next/font/google";
-import { FC, PropsWithChildren } from "react";
+import { PropsWithChildren } from "react";
 
 import { AppFooter } from "./AppFooter";
 import { AppHeader } from "./AppHeader";
@@ -10,7 +10,9 @@ const karla = Karla({
   variable: "--font-karla",
 });
 
-export const AppLayout: FC<PropsWithChildren> = ({ children }) => {
+type AppLayoutProps = PropsWithChildren;
+
+export const AppLayout = ({ children }: AppLayoutProps) => {
   return (
     <div className={`min-h-screen flex flex-col ${karla.variable} font-sans`}>
       <AppHeader />

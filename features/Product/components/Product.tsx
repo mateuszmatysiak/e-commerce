@@ -1,14 +1,16 @@
+import type Prisma from "@prisma/client";
+import { Decimal } from "@prisma/client/runtime";
 import Image from "next/image";
 
-import { Product } from "@prisma/client";
-import { Decimal } from "@prisma/client/runtime";
-import { Button } from "./Button";
+import { Button } from "@/shared/components/Button";
 
 export function formatCurrency(value: Decimal) {
   return new Intl.NumberFormat("pl", { style: "currency", currency: "PLN" }).format(Number(value));
 }
 
-export const ProductItem = ({ image, name, price, description }: Product) => {
+type ProductProps = Prisma.Product;
+
+export const Product = ({ image, name, price, description }: ProductProps) => {
   return (
     <li className="flex flex-col gap-3">
       <div className="relative h-64 rounded-lg overflow-hidden border border-gray-200 dark:border-slate-800">
@@ -33,8 +35,7 @@ export const ProductItem = ({ image, name, price, description }: Product) => {
         <p className="text-gray-600 font-light line-clamp-2 dark:text-gray-400">{description}</p>
 
         <div className="flex flex-col gap-3">
-          <Button variant="contained">Kup</Button>
-          <Button variant="outlined">Dodaj do koszyka</Button>
+          <Button variant="contained">Dodaj do koszyka</Button>
         </div>
       </div>
     </li>

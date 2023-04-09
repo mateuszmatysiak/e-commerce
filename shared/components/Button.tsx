@@ -2,9 +2,9 @@ import { ButtonHTMLAttributes } from "react";
 
 type ButtonType = "outlined" | "contained";
 
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   variant: ButtonType;
-}
+};
 
 const BUTTON_VARIANTS: { [key in ButtonType]: string } = {
   contained: "text-white bg-blue-600 hover:bg-blue-700",
