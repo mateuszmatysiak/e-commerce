@@ -34,9 +34,7 @@ export const Product = ({ image, name, price, description }: ProductProps) => {
 
         <p className="text-gray-600 font-light line-clamp-2 dark:text-gray-400">{description}</p>
 
-        <div className="flex flex-col gap-3">
-          <Button variant="contained">Dodaj do koszyka</Button>
-        </div>
+        <Button>Dodaj do koszyka</Button>
       </div>
     </li>
   );

@@ -32,9 +32,7 @@ export const AppHeader = () => {
         {status === "authenticated" ? <AccountMenu /> : null}
 
         {!isSignInPage && status === "unauthenticated" ? (
-          <Button variant="contained" onClick={() => signIn()}>
-            Zaloguj się
-          </Button>
+          <Button onClick={() => signIn()}>Zaloguj się</Button>
         ) : null}
 
         {!isSignInPage ? <Checkout /> : null}

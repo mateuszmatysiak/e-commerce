@@ -11,7 +11,7 @@ export default function SignInPage({ providers }: SignInPageProps) {
   return (
     <div className="flex flex-col items-center gap-4">
       {Object.values(providers).map((provider) => (
-        <Button key={provider.name} variant="contained" onClick={() => signIn(provider.id)}>
+        <Button key={provider.name} onClick={() => signIn(provider.id)}>
           Zaloguj się przy użyciu {provider.name}
         </Button>
       ))}
