@@ -1,9 +1,9 @@
 import { ArrowPathIcon } from "@heroicons/react/20/solid";
-import { ShoppingBagIcon } from "@heroicons/react/24/outline";
 import { signIn, useSession } from "next-auth/react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
+import { Checkout } from "@/features/Checkout/components/Checkout";
 import { Button } from "@/shared/components/Button";
 import { AccountMenu } from "./AccountMenu";
 
@@ -37,15 +37,7 @@ export const AppHeader = () => {
           </Button>
         ) : null}
 
-        {!isSignInPage ? (
-          <div className="flex items-center gap-1">
-            <button className="text-black dark:text-white hover:dark:text-blue-700 hover:text-blue-700">
-              <ShoppingBagIcon className="w-6 h-6" aria-hidden="true" />
-              <span className="sr-only">Przycisk otwierający koszyk z zakupami</span>
-            </button>
-            <span className="text-gray-600 dark:text-gray-200">0</span>
-          </div>
-        ) : null}
+        {!isSignInPage ? <Checkout /> : null}
       </div>
     </header>
   );
