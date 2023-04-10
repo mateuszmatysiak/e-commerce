@@ -3,9 +3,15 @@ import { ShoppingCartIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Fragment } from "react";
 
 import { Button } from "@/shared/components/Button";
-import { ProductCart } from "./ProductCart";
+import { useCheckoutContext } from "../hooks/useCheckoutContext";
+import { ProductCarts } from "./ProductCarts";
 
 export const Checkout = () => {
+  const { state } = useCheckoutContext();
+  const { products } = state;
+
+  const numberOfProducts = products.length;
+
   return (
     <Popover className="flex items-center relative">
       {({ open, close }) => (
@@ -20,7 +26,7 @@ export const Checkout = () => {
               className="text-gray-600 dark:text-gray-200"
               aria-describedby="Liczba produktów w koszyku"
             >
-              0
+              {numberOfProducts}
             </span>
             <span className="sr-only">Przycisk otwierający koszyk z zakupami</span>
           </Popover.Button>
@@ -35,7 +41,7 @@ export const Checkout = () => {
             leaveTo="opacity-0 translate-y-1"
           >
             <Popover.Panel className="absolute top-12 right-0 z-10">
-              <div className="flex flex-col bg-white text-black p-6 w-96 overflow-hidden border border-gray-200 rounded-md shadow-lg">
+              <div className="flex flex-col max-h-96 w-96 p-6 bg-white text-black overflow-x-hidden overflow-y-auto border border-gray-200 rounded-md shadow-lg">
                 <div className="flex justify-between items-center">
                   <h2 className="text-xl">Produkty w koszyku</h2>
 
@@ -45,10 +51,13 @@ export const Checkout = () => {
                   </button>
                 </div>
 
-                <ul className="divide-y">
-                  <ProductCart />
-                  <ProductCart />
-                </ul>
+                {numberOfProducts ? (
+                  <ProductCarts />
+                ) : (
+                  <div className="py-6 text-center text-sm text-gray-500">
+                    Brak produktów w koszyku
+                  </div>
+                )}
 
                 <Button>Przejdź do zapłaty</Button>
               </div>

@@ -5,6 +5,7 @@ import { ThemeProvider } from "next-themes";
 import type { AppProps } from "next/app";
 import { useState } from "react";
 
+import { CheckoutContextProvider } from "@/features/Checkout/utils/context";
 import { AppLayout } from "@/features/Layout/components/AppLayout";
 import "@/styles/globals.css";
 
@@ -15,12 +16,14 @@ export default function App({ Component, pageProps: { session, ...pageProps } }:
     <SessionProvider session={session}>
       <ThemeProvider attribute="class" defaultTheme="dark">
         <QueryClientProvider client={queryClient}>
-          <Hydrate state={pageProps.dehydratedState}>
-            <AppLayout>
-              <Component {...pageProps} />
-            </AppLayout>
-          </Hydrate>
-          <ReactQueryDevtools />
+          <CheckoutContextProvider>
+            <Hydrate state={pageProps.dehydratedState}>
+              <AppLayout>
+                <Component {...pageProps} />
+              </AppLayout>
+            </Hydrate>
+            <ReactQueryDevtools />
+          </CheckoutContextProvider>
         </QueryClientProvider>
       </ThemeProvider>
     </SessionProvider>
