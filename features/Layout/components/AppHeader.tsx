@@ -11,7 +11,7 @@ export const AppHeader = () => {
   const { status } = useSession();
   const { pathname } = useRouter();
 
-  const isSignInPage = pathname.includes("/auth/signin");
+  const isSignInPage = pathname.includes("/auth/sign-in"); // TODO: change hardcoded url
 
   return (
     <header className="fixed inset-x-0 flex justify-between items-center gap-8 w-full max-w-screen-xl h-20 mx-auto px-8 bg-gray-100 border-b border-b-gray-200 z-10 dark:bg-slate-900 dark:border-b-slate-800">

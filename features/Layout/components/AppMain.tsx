@@ -1,6 +1,8 @@
-import { PropsWithChildren } from "react";
+import { ReactNode } from "react";
 
-type AppMainProps = PropsWithChildren;
+interface AppMainProps {
+  children: ReactNode;
+}
 
 export const AppMain = ({ children }: AppMainProps) => {
   return (

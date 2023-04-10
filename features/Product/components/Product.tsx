@@ -2,15 +2,22 @@ import type Prisma from "@prisma/client";
 import { Decimal } from "@prisma/client/runtime";
 import Image from "next/image";
 
+import { useCheckoutContext } from "@/features/Checkout/hooks/useCheckoutContext";
 import { Button } from "@/shared/components/Button";
 
 export function formatCurrency(value: Decimal) {
   return new Intl.NumberFormat("pl", { style: "currency", currency: "PLN" }).format(Number(value));
 }
 
-type ProductProps = Prisma.Product;
+interface ProductProps {
+  product: Prisma.Product;
+}
 
-export const Product = ({ image, name, price, description }: ProductProps) => {
+export const Product = ({ product }: ProductProps) => {
+  const { image, name, price, description } = product;
+
+  const { dispatch } = useCheckoutContext();
+
   return (
     <li className="flex flex-col gap-3">
       <div className="relative h-64 rounded-lg overflow-hidden border border-gray-200 dark:border-slate-800">
@@ -34,7 +41,7 @@ export const Product = ({ image, name, price, description }: ProductProps) => {
 
         <p className="text-gray-600 font-light line-clamp-2 dark:text-gray-400">{description}</p>
 
-        <Button>Dodaj do koszyka</Button>
+        <Button onClick={() => dispatch({ type: "addProduct", product })}>Dodaj do koszyka</Button>
       </div>
     </li>
   );

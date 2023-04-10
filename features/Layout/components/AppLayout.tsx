@@ -1,5 +1,5 @@
 import { Karla } from "next/font/google";
-import { PropsWithChildren } from "react";
+import { ReactNode } from "react";
 
 import { AppFooter } from "./AppFooter";
 import { AppHeader } from "./AppHeader";
@@ -10,7 +10,9 @@ const karla = Karla({
   variable: "--font-karla",
 });
 
-type AppLayoutProps = PropsWithChildren;
+interface AppLayoutProps {
+  children: ReactNode;
+}
 
 export const AppLayout = ({ children }: AppLayoutProps) => {
   return (
