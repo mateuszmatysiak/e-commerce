@@ -2,7 +2,6 @@ import { Popover, Transition } from "@headlessui/react";
 import { ShoppingCartIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Fragment } from "react";
 
-import { Button } from "@/shared/components/Button";
 import { useCheckoutContext } from "../hooks/useCheckoutContext";
 import { ProductCarts } from "./ProductCarts";
 
@@ -54,12 +53,10 @@ export const Checkout = () => {
                 {numberOfProducts ? (
                   <ProductCarts />
                 ) : (
-                  <div className="py-6 text-center text-sm text-gray-500">
+                  <div className="pt-6 text-center text-sm text-gray-500">
                     Brak produktów w koszyku
                   </div>
                 )}
-
-                <Button>Przejdź do zapłaty</Button>
               </div>
             </Popover.Panel>
           </Transition>
