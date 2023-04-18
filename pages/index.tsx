@@ -1,6 +1,6 @@
 import { QueryClient, dehydrate } from "@tanstack/react-query";
-import { GetStaticProps } from "next";
 import Head from "next/head";
+import { GetStaticProps } from "next/types";
 
 import { Products } from "@/features/Product/components/Products";
 import { fetchProducts, useProducts } from "@/features/Product/hooks/useProducts";
@@ -26,10 +26,7 @@ export default function HomePage() {
 export const getStaticProps: GetStaticProps = async () => {
   const queryClient = new QueryClient();
 
-  await queryClient.prefetchQuery({
-    queryKey: ["products"],
-    queryFn: () => fetchProducts(),
-  });
+  await queryClient.prefetchQuery(["products"], fetchProducts);
 
   return {
     props: {
