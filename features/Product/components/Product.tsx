@@ -1,6 +1,7 @@
 import type Prisma from "@prisma/client";
 import { Decimal } from "@prisma/client/runtime";
 import Image from "next/image";
+import Link from "next/link";
 
 import { useCheckoutContext } from "@/features/Checkout/hooks/useCheckoutContext";
 import { Button } from "@/shared/components/Button";
@@ -14,7 +15,7 @@ interface ProductProps {
 }
 
 export const Product = ({ product }: ProductProps) => {
-  const { image, name, price, description } = product;
+  const { id, image, name, price, description } = product;
 
   const { dispatch } = useCheckoutContext();
 
@@ -35,7 +36,12 @@ export const Product = ({ product }: ProductProps) => {
 
       <div className="flex flex-col gap-3">
         <div className="flex justify-between items-baseline">
-          <h2 className="text-2xl">{name}</h2>
+          <Link
+            href={`/product/${id}`}
+            className="text-2xl hover:text-blue-700 hover:dark:text-blue-700"
+          >
+            {name}
+          </Link>
           <span>{formatCurrency(price)}</span>
         </div>
 
