@@ -28,7 +28,7 @@ export const ProductCart = ({ product, onDeleteProduct }: ProductCartProps) => {
         </div>
 
         <div>
-          <Link href="/product" className="hover:text-blue-700">
+          <Link href={`/product/${id}`} className="hover:text-blue-700">
             {name}
           </Link>
           <p className="text-sm text-gray-500 line-clamp-2">{description}</p>
