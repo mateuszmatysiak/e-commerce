@@ -1,23 +1,19 @@
 import type Prisma from "@prisma/client";
-import { Decimal } from "@prisma/client/runtime";
 import Image from "next/image";
 import Link from "next/link";
 
 import { useCheckoutContext } from "@/features/Checkout/hooks/useCheckoutContext";
 import { Button } from "@/shared/components/Button";
+import { formatCurrency } from "@/shared/utils/currency";
 
-export function formatCurrency(value: Decimal) {
-  return new Intl.NumberFormat("pl", { style: "currency", currency: "PLN" }).format(Number(value));
-}
-
-interface ProductProps {
+interface ProductListItemProps {
   product: Prisma.Product;
 }
 
-export const Product = ({ product }: ProductProps) => {
-  const { id, image, name, price, description } = product;
-
+export const ProductListItem = ({ product }: ProductListItemProps) => {
   const { dispatch } = useCheckoutContext();
+
+  const { id, image, name, price, description } = product;
 
   return (
     <li className="flex flex-col gap-3">

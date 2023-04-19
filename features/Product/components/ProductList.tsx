@@ -1,16 +1,16 @@
 import type Prisma from "@prisma/client";
 
-import { Product } from "./Product";
+import { ProductListItem } from "./ProductListItem";
 
-interface ProductsProps {
+interface ProductListProps {
   products: Prisma.Product[];
 }
 
-export const Products = ({ products }: ProductsProps) => {
+export const ProductList = ({ products }: ProductListProps) => {
   return (
     <ul className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
       {products.map((product) => {
-        return <Product key={product.id} product={product} />;
+        return <ProductListItem key={product.id} product={product} />;
       })}
     </ul>
   );

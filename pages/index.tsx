@@ -2,13 +2,17 @@ import { QueryClient, dehydrate } from "@tanstack/react-query";
 import Head from "next/head";
 import { GetStaticProps } from "next/types";
 
-import { Products } from "@/features/Product/components/Products";
-import { fetchProducts, useProducts } from "@/features/Product/hooks/useProducts";
+import { ProductList } from "@/features/Product/components/ProductList";
+import { fetchProductList, useProductList } from "@/features/Product/hooks/useProductList";
+import { EmptyPage } from "@/shared/components/EmptyPage";
+import { ErrorPage } from "@/shared/components/ErrorPage";
 
-export default function HomePage() {
-  const { data: products, error } = useProducts();
+export default function ProductListPage() {
+  const { data: products, error } = useProductList();
 
-  if (error) return <div className="text-xl text-gray-600 dark:text-gray-400">{error.message}</div>;
+  if (error) return <ErrorPage>{error.message}</ErrorPage>;
+
+  if (!products) return <EmptyPage>Nie znaleziono produktów</EmptyPage>;
 
   return (
     <>
@@ -18,7 +22,7 @@ export default function HomePage() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Products products={products} />
+      <ProductList products={products} />
     </>
   );
 }
@@ -26,7 +30,7 @@ export default function HomePage() {
 export const getStaticProps: GetStaticProps = async () => {
   const queryClient = new QueryClient();
 
-  await queryClient.prefetchQuery(["products"], fetchProducts);
+  await queryClient.prefetchQuery(["productList"], fetchProductList);
 
   return {
     props: {
