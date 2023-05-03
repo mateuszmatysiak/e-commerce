@@ -16,5 +16,11 @@ module.exports = {
     ],
   },
   reactStrictMode: true,
-  transpilePackages: ["ui"],
+  transpilePackages: [
+    "@app/ui",
+    "@app/features-product",
+    "@app/features-checkout",
+    "@app/features-layout",
+    "@app/database",
+  ],
 };
