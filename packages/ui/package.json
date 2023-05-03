@@ -1,0 +1,13 @@
+{
+  "name": "@app/ui",
+  "private": true,
+  "main": "./index.tsx",
+  "dependencies": {
+    "@app/database": "*",
+    "@app/tailwind-config": "*"
+  },
+  "devDependencies": {
+    "@app/eslint-config": "*",
+    "@app/typescript-config": "*"
+  }
+}

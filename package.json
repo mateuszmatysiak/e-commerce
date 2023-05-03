@@ -1,69 +1,40 @@
 {
-  "name": "nextjs-ecommerce",
-  "version": "0.1.0",
+  "name": "turbo-test",
+  "packageManager": "npm@8.1.2",
   "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/**"
+  ],
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "prepare": "husky install",
-    "pre-commit": "lint-staged"
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "start": "turbo run start",
+    "lint": "turbo run lint",
+    "generate": "turbo run generate",
+    "db:seed": "turbo run db:seed",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "prisma": {
-    "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts"
+    "schema": "packages/database/prisma/schema.prisma",
+    "seed": "tsx packages/database/prisma/seed.ts"
   },
   "dependencies": {
-    "@next-auth/prisma-adapter": "1.0.5",
-    "@prisma/client": "4.12.0",
-    "@stripe/react-stripe-js": "2.1.0",
-    "@stripe/stripe-js": "1.52.1",
-    "@tanstack/react-query": "4.28.0",
-    "@tanstack/react-query-devtools": "4.29.0",
-    "@types/react": "18.0.32",
-    "@types/react-dom": "18.0.11",
-    "ky": "0.33.3",
-    "ky-universal": "0.11.0",
     "next": "13.2.4",
-    "next-auth": "4.21.1",
-    "next-themes": "0.2.1",
     "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "stripe": "12.1.1"
+    "react-dom": "18.2.0"
   },
   "devDependencies": {
+    "@app/eslint-config": "*",
+    "@app/typescript-config": "*",
     "@headlessui/react": "1.7.13",
     "@heroicons/react": "2.0.17",
-    "@tailwindcss/aspect-ratio": "0.4.2",
-    "@tailwindcss/forms": "0.5.3",
     "@types/node": "18.15.11",
-    "@typescript-eslint/eslint-plugin": "5.57.0",
-    "autoprefixer": "10.4.14",
-    "eslint": "8.37.0",
-    "eslint-config-next": "13.2.4",
-    "eslint-config-prettier": "8.8.0",
-    "eslint-plugin-jest-dom": "4.0.3",
-    "eslint-plugin-jsx-a11y": "6.7.1",
-    "eslint-plugin-prettier": "4.2.1",
-    "eslint-plugin-react": "7.32.2",
-    "eslint-plugin-react-hooks": "4.6.0",
-    "eslint-plugin-testing-library": "5.10.2",
-    "husky": "8.0.3",
-    "lint-staged": "13.2.0",
-    "postcss": "8.4.21",
-    "prettier": "2.8.7",
-    "prisma": "4.12.0",
-    "tailwindcss": "3.3.1",
-    "ts-node": "10.9.1",
+    "@types/react": "18.0.32",
+    "@types/react-dom": "18.0.11",
+    "prettier": "2.8.8",
+    "tsx": "^3.12.7",
+    "turbo": "1.9.3",
     "typescript": "5.0.3"
-  },
-  "lint-staged": {
-    "*.{js,jsx,ts,tsx}": [
-      "eslint --fix",
-      "prettier --write"
-    ],
-    "*.{json,md,yaml,yml,scss,css}": [
-      "prettier --write"
-    ]
   }
 }
