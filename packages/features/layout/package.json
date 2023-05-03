@@ -3,9 +3,10 @@
   "private": true,
   "main": "./index.tsx",
   "dependencies": {
-    "@app/tailwind-config": "*",
     "@app/ui": "*",
-    "@app/database": "*"
+    "@app/database": "*",
+    "@app/features-checkout": "*",
+    "@app/tailwind-config": "*"
   },
   "devDependencies": {
     "@app/eslint-config": "*",

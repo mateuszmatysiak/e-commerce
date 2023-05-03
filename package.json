@@ -1,5 +1,5 @@
 {
-  "name": "turbo-test",
+  "name": "e-commerce-turbo",
   "packageManager": "npm@8.1.2",
   "private": true,
   "workspaces": [
@@ -33,7 +33,7 @@
     "@types/react": "18.0.32",
     "@types/react-dom": "18.0.11",
     "prettier": "2.8.8",
-    "tsx": "^3.12.7",
+    "tsx": "3.12.7",
     "turbo": "1.9.3",
     "typescript": "5.0.3"
   }
