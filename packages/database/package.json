@@ -5,11 +5,5 @@
   "scripts": {
     "generate": "prisma generate",
     "db:seed": "tsx ./prisma/seed.ts"
-  },
-  "dependencies": {
-    "@prisma/client": "^4.12.0"
-  },
-  "devDependencies": {
-    "prisma": "4.12.0"
   }
 }

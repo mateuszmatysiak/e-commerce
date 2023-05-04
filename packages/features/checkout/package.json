@@ -3,12 +3,8 @@
   "private": true,
   "main": "./index.tsx",
   "dependencies": {
-    "@app/ui": "*",
-    "@app/database": "*",
-    "@app/tailwind-config": "*"
-  },
-  "devDependencies": {
-    "@app/eslint-config": "*",
-    "@app/typescript-config": "*"
+    "@app/ui": "workspace:*",
+    "@app/database": "workspace:*",
+    "@app/tailwind-config": "workspace:*"
   }
 }

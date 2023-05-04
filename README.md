@@ -6,7 +6,7 @@ This Turborepo includes the following packages/apps:
 - `packages/ui`: React component library
 - `packages/features`: `e-commerce app` modules
 - `packages/database`: `prisma` configurations
-- `packages/config/tsconfig`: `typescript` configurations
+- `packages/config/typescript`: `typescript` configurations
 - `packages/config/eslint`: `eslint` configurations
 - `packages/config/tailwind`: `tailwind` configurations
 
@@ -15,7 +15,7 @@ This Turborepo includes the following packages/apps:
 To build all apps and packages, run the following command:
 
 ```
-npm run build
+pnpm build
 ```
 
 ### Develop
@@ -23,7 +23,7 @@ npm run build
 To develop all apps and packages, run the following command:
 
 ```
-npm install
-npm run generate
-npm run dev
+pnpm install
+pnpm generate
+pnpm dev
 ```

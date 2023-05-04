@@ -1,11 +1,7 @@
 {
   "name": "e-commerce-turbo",
-  "packageManager": "npm@8.1.2",
+  "packageManager": "pnpm@8.4.0",
   "private": true,
-  "workspaces": [
-    "apps/*",
-    "packages/**"
-  ],
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev",
@@ -13,7 +9,9 @@
     "lint": "turbo run lint",
     "generate": "turbo run generate",
     "db:seed": "turbo run db:seed",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "prepare": "husky install",
+    "pre-commit": "lint-staged"
   },
   "prisma": {
     "schema": "packages/database/prisma/schema.prisma",
@@ -22,11 +20,20 @@
   "dependencies": {
     "next": "13.2.4",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "@tanstack/react-query": "4.28.0",
+    "@tanstack/react-query-devtools": "4.29.0",
+    "ky": "0.33.3",
+    "ky-universal": "0.11.0",
+    "next-auth": "4.21.1",
+    "next-themes": "0.2.1",
+    "sharp": "0.32.1",
+    "@prisma/client": "4.12.0"
   },
   "devDependencies": {
-    "@app/eslint-config": "*",
-    "@app/typescript-config": "*",
+    "@app/eslint-config": "workspace:*",
+    "@app/typescript-config": "workspace:*",
+    "@app/tailwind-config": "workspace:*",
     "@headlessui/react": "1.7.13",
     "@heroicons/react": "2.0.17",
     "@types/node": "18.15.11",
@@ -35,6 +42,17 @@
     "prettier": "2.8.8",
     "tsx": "3.12.7",
     "turbo": "1.9.3",
-    "typescript": "5.0.3"
+    "typescript": "5.0.3",
+    "prisma": "4.12.0",
+    "husky": "8.0.3",
+    "lint-staged": "13.2.0"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "prettier --write"
+    ],
+    "*.{json,md,yaml,yml,scss,css}": [
+      "prettier --write"
+    ]
   }
 }

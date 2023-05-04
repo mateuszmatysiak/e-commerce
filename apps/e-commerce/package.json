@@ -8,21 +8,14 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@app/ui": "*",
-    "@app/database": "*",
-    "@app/features-layout": "*",
-    "@app/features-checkout": "*",
-    "@app/features-product": "*",
+    "@app/ui": "workspace:*",
+    "@app/database": "workspace:*",
+    "@app/features-layout": "workspace:*",
+    "@app/features-checkout": "workspace:*",
+    "@app/features-product": "workspace:*",
     "@next-auth/prisma-adapter": "1.0.5",
     "@stripe/react-stripe-js": "2.1.0",
     "@stripe/stripe-js": "1.52.1",
-    "@tanstack/react-query": "4.28.0",
-    "@tanstack/react-query-devtools": "4.29.0",
-    "ky": "0.33.3",
-    "ky-universal": "0.11.0",
-    "next-auth": "4.21.1",
-    "next-themes": "0.2.1",
-    "sharp": "0.32.1",
     "stripe": "12.1.1"
   }
 }

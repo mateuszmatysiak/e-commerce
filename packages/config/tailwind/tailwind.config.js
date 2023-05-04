@@ -3,8 +3,9 @@ const { fontFamily } = require("tailwindcss/defaultTheme");
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "../../packages/**/*.{js,ts,jsx,tsx}",
-    "./pages/**/*.{js,ts,jsx,tsx}",
+    "../../packages/ui/*.{ts,tsx}",
+    "../../packages/features/**/*.{ts,tsx}",
+    "./pages/**/*.{ts,tsx}",
   ],
   darkMode: "class",
   theme: {
@@ -14,8 +15,5 @@ module.exports = {
       },
     },
   },
-  plugins: [
-    require("@tailwindcss/aspect-ratio"),
-    require("@tailwindcss/forms"),
-  ],
+  plugins: [require("@tailwindcss/aspect-ratio"), require("@tailwindcss/forms")],
 };
