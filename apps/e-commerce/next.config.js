@@ -1,3 +1,5 @@
+const { PrismaPlugin } = require("@prisma/nextjs-monorepo-workaround-plugin");
+
 module.exports = {
   images: {
     remotePatterns: [
@@ -23,4 +25,11 @@ module.exports = {
     "@app/features-layout",
     "@app/database",
   ],
+  webpack: (config, { isServer }) => {
+    if (isServer) {
+      config.plugins = [...config.plugins, new PrismaPlugin()];
+    }
+
+    return config;
+  },
 };

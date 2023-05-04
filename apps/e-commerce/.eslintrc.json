@@ -1,3 +1,3 @@
 {
-  "extends": ["@app/eslint-config"]
+  "extends": ["@app/eslint-config/nextjs"]
 }

@@ -2,10 +2,18 @@
   "name": "@app/features-product",
   "private": true,
   "main": "./index.tsx",
+  "scripts": {
+    "lint": "eslint **/*.{ts,tsx}* --fix"
+  },
   "dependencies": {
     "@app/ui": "workspace:*",
     "@app/database": "workspace:*",
     "@app/features-checkout": "workspace:*",
     "@app/tailwind-config": "workspace:*"
+  },
+  "eslintConfig": {
+    "extends": [
+      "@app/eslint-config/base"
+    ]
   }
 }

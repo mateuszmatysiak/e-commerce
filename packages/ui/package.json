@@ -2,8 +2,16 @@
   "name": "@app/ui",
   "private": true,
   "main": "./index.tsx",
+  "scripts": {
+    "lint": "eslint **/*.{ts,tsx}* --fix"
+  },
   "dependencies": {
     "@app/database": "workspace:*",
     "@app/tailwind-config": "workspace:*"
+  },
+  "eslintConfig": {
+    "extends": [
+      "@app/eslint-config/base"
+    ]
   }
 }
