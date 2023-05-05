@@ -2,7 +2,8 @@ import Image from "next/image";
 
 import { type Product } from "@app/database";
 import { useCheckoutContext } from "@app/features-checkout";
-import { Button, formatCurrency } from "@app/ui";
+import { Button } from "@app/ui";
+import { formatCurrency } from "@app/utils";
 
 interface ProductDetailsProps {
   product: Product;

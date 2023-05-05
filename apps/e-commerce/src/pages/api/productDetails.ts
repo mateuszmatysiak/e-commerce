@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
 
 import { prisma } from "@app/database";
-import { getQueryAsString } from "@app/ui";
+import { getQueryAsString } from "@app/utils";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   const productId = Number(getQueryAsString(req.query.id));

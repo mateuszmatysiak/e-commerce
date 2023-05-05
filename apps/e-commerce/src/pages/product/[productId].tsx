@@ -4,7 +4,8 @@ import { useRouter } from "next/router";
 import { GetStaticPaths, GetStaticProps } from "next/types";
 
 import { ProductDetails, fetchProductDetails, useProductDetails } from "@app/features-product";
-import { EmptyPage, ErrorPage, getQueryAsString } from "@app/ui";
+import { EmptyPage, ErrorPage } from "@app/ui";
+import { getQueryAsString } from "@app/utils";
 
 export default function ProductPage() {
   const { query } = useRouter();

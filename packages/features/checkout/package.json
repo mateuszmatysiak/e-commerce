@@ -1,9 +1,9 @@
 {
   "name": "@app/features-checkout",
   "private": true,
-  "main": "./index.tsx",
+  "main": "src/index.tsx",
   "scripts": {
-    "lint": "eslint **/*.{ts,tsx}* --fix"
+    "lint": "eslint --fix"
   },
   "dependencies": {
     "@app/ui": "workspace:*",
