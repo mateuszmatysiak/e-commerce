@@ -18,7 +18,7 @@ importers:
       husky: 8.0.3
       ky: 0.33.3
       ky-universal: 0.11.0
-      lint-staged: 13.2.0
+      lint-staged: 13.2.2
       next: 13.2.4
       next-auth: 4.21.1
       next-themes: 0.2.1
@@ -53,7 +53,7 @@ importers:
       '@types/react': 18.0.32
       '@types/react-dom': 18.0.11
       husky: 8.0.3
-      lint-staged: 13.2.0
+      lint-staged: 13.2.2
       prettier: 2.8.8
       tsx: 3.12.7
       turbo: 1.8.3
@@ -2729,8 +2729,8 @@ packages:
     resolution: {integrity: sha512-7ylylesZQ/PV29jhEDl3Ufjo6ZX7gCqJr5F7PKrqc93v7fzSymt1BpwEU8nAUXs8qzzvqhbjhK5QZg6Mt/HkBg==}
     dev: true
 
-  /lint-staged/13.2.0:
-    resolution: {integrity: sha512-GbyK5iWinax5Dfw5obm2g2ccUiZXNGtAS4mCbJ0Lv4rq6iEtfBSjOYdcbOtAIFtM114t0vdpViDDetjVTSd8Vw==}
+  /lint-staged/13.2.2:
+    resolution: {integrity: sha512-71gSwXKy649VrSU09s10uAT0rWCcY3aewhMaHyl2N84oBk4Xs9HgxvUp3AYu+bNsK4NrOYYxvSgg7FyGJ+jGcA==}
     engines: {node: ^14.13.1 || >=16.0.0}
     hasBin: true
     dependencies:
