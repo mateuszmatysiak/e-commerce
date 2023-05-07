@@ -2,12 +2,14 @@ import { Popover, Transition } from "@headlessui/react";
 import { ShoppingCartIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Fragment } from "react";
 
+import { Button } from "@app/ui";
+import { useCheckout } from "../hooks/useCheckout";
 import { useCheckoutContext } from "../hooks/useCheckoutContext";
 import { ProductCarts } from "./ProductCarts";
-import { Button } from "@app/ui";
 
 export const Checkout = () => {
   const { state } = useCheckoutContext();
+  const { mutate: handleCheckout } = useCheckout();
   const { products } = state;
 
   const numberOfProducts = products.length;
@@ -56,7 +58,9 @@ export const Checkout = () => {
                     <ProductCarts />
 
                     <div className="pt-6">
-                      <Button className="w-full">Przejdź do zapłaty</Button>
+                      <Button className="w-full" onClick={() => handleCheckout(products)}>
+                        Przejdź do zapłaty
+                      </Button>
                     </div>
                   </div>
                 ) : (

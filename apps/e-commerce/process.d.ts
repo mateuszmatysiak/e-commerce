@@ -4,6 +4,6 @@ declare namespace NodeJS {
     NEXTAUTH_SECRET: string;
     GOOGLE_ID: string;
     GOOGLE_SECRET: string;
-    SECRET: string;
+    STRIPE_SECRET_KEY: string;
   }
 }

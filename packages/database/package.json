@@ -3,7 +3,7 @@
   "private": true,
   "main": "src/index.ts",
   "scripts": {
-    "generate": "prisma generate",
+    "generate": "prisma generate --schema=src/prisma/schema.prisma",
     "db:seed": "tsx ./prisma/seed.ts",
     "lint": "eslint --fix"
   },
