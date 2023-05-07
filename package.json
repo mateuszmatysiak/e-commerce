@@ -32,6 +32,7 @@
     "stripe": "12.1.1"
   },
   "devDependencies": {
+    "@app/env": "workspace:*",
     "@app/eslint-config": "workspace:*",
     "@app/typescript-config": "workspace:*",
     "@headlessui/react": "1.7.13",

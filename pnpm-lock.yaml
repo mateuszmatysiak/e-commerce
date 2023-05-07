@@ -4,6 +4,7 @@ importers:
 
   .:
     specifiers:
+      '@app/env': workspace:*
       '@app/eslint-config': workspace:*
       '@app/typescript-config': workspace:*
       '@headlessui/react': 1.7.13
@@ -43,6 +44,7 @@ importers:
       sharp: 0.32.1
       stripe: 12.1.1
     devDependencies:
+      '@app/env': link:packages/config/env
       '@app/eslint-config': link:packages/config/eslint
       '@app/typescript-config': link:packages/config/typescript
       '@headlessui/react': 1.7.13_biqbaboplfbrettd7655fr4n2y
@@ -79,6 +81,9 @@ importers:
       '@next-auth/prisma-adapter': 1.0.5_olz4gynuwklrt45ffo7wirvoly
     devDependencies:
       '@prisma/nextjs-monorepo-workaround-plugin': 4.13.0
+
+  packages/config/env:
+    specifiers: {}
 
   packages/config/eslint:
     specifiers:
