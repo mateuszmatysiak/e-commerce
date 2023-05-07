@@ -3,7 +3,8 @@
   "private": true,
   "main": "src/index.tsx",
   "scripts": {
-    "lint": "eslint --fix"
+    "typecheck": "tsc --noEmit",
+    "lint": "pnpm typecheck && eslint --fix"
   },
   "dependencies": {
     "@app/ui": "workspace:*",
