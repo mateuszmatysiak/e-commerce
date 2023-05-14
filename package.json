@@ -16,7 +16,7 @@
     "pre-commit": "lint-staged"
   },
   "prisma": {
-    "schema": "packages/database/prisma/schema.prisma",
+    "schema": "packages/database/src/prisma/schema.prisma",
     "seed": "tsx packages/database/src/prisma/seed.ts"
   },
   "dependencies": {
