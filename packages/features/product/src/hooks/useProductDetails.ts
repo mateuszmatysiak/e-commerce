@@ -6,7 +6,7 @@ import { type Product } from "@app/database";
 import { getQueryAsString } from "@app/utils";
 
 const fetchProductDetails = async (productId: string): Promise<Product> => {
-  return await ky(`http://localhost:3000/api/productDetails?id=${productId}`).json();
+  return await ky(`/api/productDetails?id=${productId}`).json();
 };
 
 const useProductDetails = () => {

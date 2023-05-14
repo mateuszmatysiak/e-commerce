@@ -27,7 +27,7 @@ const EXAMPLE_PRODUCT_ID = "price_1N4ofqCx6E9015h4PU7xJrQy";
 const checkoutCart = async (products: Product[]) => {
   const stripeItems = products.map((product) => transformProduct(product));
 
-  return await ky(`http://localhost:3000/api/checkoutSession`, {
+  return await ky(`/api/checkoutSession`, {
     method: "POST",
     // body: JSON.stringify(stripeItems),
     body: JSON.stringify([{ price: EXAMPLE_PRODUCT_ID, quantity: 1 }]),
