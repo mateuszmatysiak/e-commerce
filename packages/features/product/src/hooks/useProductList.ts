@@ -4,7 +4,7 @@ import ky, { HTTPError } from "ky-universal";
 import { type Product } from "@app/database";
 
 const fetchProductList = async (): Promise<Product[]> => {
-  return await ky("http://localhost:3000/api/productList").json();
+  return await ky(`/api/productList`).json();
 };
 
 const useProductList = () => {
