@@ -1,13 +1,12 @@
 {
   "name": "@app/ui",
   "private": true,
-  "main": "src/index.tsx",
+  "main": "src/index.ts",
   "scripts": {
     "typecheck": "tsc --noEmit",
     "lint": "pnpm typecheck && eslint --fix"
   },
   "dependencies": {
-    "@app/database": "workspace:*",
     "@app/tailwind-config": "workspace:*"
   },
   "eslintConfig": {

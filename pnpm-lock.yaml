@@ -169,10 +169,8 @@ importers:
 
   packages/ui:
     specifiers:
-      '@app/database': workspace:*
       '@app/tailwind-config': workspace:*
     dependencies:
-      '@app/database': link:../database
       '@app/tailwind-config': link:../config/tailwind
 
   packages/utils:

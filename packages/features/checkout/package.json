@@ -1,7 +1,7 @@
 {
   "name": "@app/features-checkout",
   "private": true,
-  "main": "src/index.tsx",
+  "main": "src/index.ts",
   "scripts": {
     "typecheck": "tsc --noEmit",
     "lint": "pnpm typecheck && eslint --fix"

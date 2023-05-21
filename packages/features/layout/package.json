@@ -1,7 +1,7 @@
 {
   "name": "@app/features-layout",
   "private": true,
-  "main": "src/index.tsx",
+  "main": "src/index.ts",
   "scripts": {
     "typecheck": "tsc --noEmit",
     "lint": "pnpm typecheck && eslint --fix"
