@@ -11,11 +11,11 @@ async function main() {
         image: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990",
       },
       {
-        name: "Biała koszulka",
+        name: "Kubki",
         description:
-          "Biała koszula to klasyczny i ponadczasowy element, który emanuje elegancją i wszechstronnością.",
-        price: 30.5,
-        image: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990",
+          "Kubki to klasyczny i ponadczasowy element, który emanuje elegancją i wszechstronnością.",
+        price: 15.5,
+        image: "https://images.unsplash.com/photo-1605714117967-9fe201ddfe9d",
       },
     ],
   });
