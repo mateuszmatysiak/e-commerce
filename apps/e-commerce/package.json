@@ -15,9 +15,7 @@
     "@app/tailwind-config": "workspace:*",
     "@app/ui": "workspace:*",
     "@app/utils": "workspace:*",
-    "@next-auth/prisma-adapter": "1.0.5"
-  },
-  "devDependencies": {
+    "@next-auth/prisma-adapter": "1.0.5",
     "@prisma/nextjs-monorepo-workaround-plugin": "4.13.0"
   }
 }
