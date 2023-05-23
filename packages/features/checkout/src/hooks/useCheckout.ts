@@ -1,9 +1,9 @@
 import { loadStripe } from "@stripe/stripe-js";
 import { useMutation } from "@tanstack/react-query";
-import ky from "ky-universal";
 import { Stripe } from "stripe";
 
 import { Product } from "@app/database";
+import { fetcher } from "@app/utils";
 
 type CheckoutSessionId = Pick<Stripe.Checkout.Session, "id">;
 type CheckoutProducts = Stripe.Checkout.SessionCreateParams.LineItem;
@@ -27,11 +27,11 @@ const EXAMPLE_PRODUCT_ID = "price_1N4ofqCx6E9015h4PU7xJrQy";
 const checkoutCart = async (products: Product[]) => {
   const stripeItems = products.map((product) => transformProduct(product));
 
-  return await ky(`/api/checkoutSession`, {
+  return await fetcher<CheckoutSessionId>(`/api/checkoutSession`, {
     method: "POST",
     // body: JSON.stringify(stripeItems),
     body: JSON.stringify([{ price: EXAMPLE_PRODUCT_ID, quantity: 1 }]),
-  }).json<CheckoutSessionId>();
+  });
 };
 
 const redirectToCheckout = async (session: CheckoutSessionId) => {

@@ -10,7 +10,7 @@ export default function ProductListPage() {
 
   if (error) return <ErrorPage>{error.message}</ErrorPage>;
 
-  if (!products) return <EmptyPage>Nie znaleziono produktów</EmptyPage>;
+  if (!products) return <EmptyPage>Ładowanie...</EmptyPage>;
 
   return (
     <>

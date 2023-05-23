@@ -17,6 +17,7 @@ module.exports = {
   rules: {
     "react/react-in-jsx-scope": "off",
     "@typescript-eslint/no-empty-interface": "off",
+    "@typescript-eslint/triple-slash-reference": "off",
   },
   parserOptions: {
     ecmaVersion: 12,

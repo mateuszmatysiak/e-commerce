@@ -1,5 +1,5 @@
 {
   "extends": "@app/typescript-config/nextjs.json",
-  "include": ["."],
+  "include": [".", "../../../types/global.d.ts"],
   "exclude": ["dist", "build", "node_modules"]
 }

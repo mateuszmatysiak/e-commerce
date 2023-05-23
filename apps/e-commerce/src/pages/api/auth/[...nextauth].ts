@@ -4,17 +4,16 @@ import NextAuth, { NextAuthOptions } from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 
 import { prisma } from "@app/database";
-import { getEnv } from "@app/env";
 
 export const authOptions: NextAuthOptions = {
   providers: [
     GoogleProvider({
-      clientId: getEnv("GOOGLE_ID"),
-      clientSecret: getEnv("GOOGLE_SECRET"),
+      clientId: process.env.GOOGLE_ID,
+      clientSecret: process.env.GOOGLE_SECRET,
     }),
   ],
   adapter: PrismaAdapter(prisma),
-  secret: getEnv("NEXTAUTH_SECRET"),
+  secret: process.env.NEXTAUTH_SECRET,
   pages: {
     signIn: "/auth/signIn",
   },

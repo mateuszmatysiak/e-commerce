@@ -4,16 +4,14 @@
   "private": true,
   "scripts": {
     "build": "turbo run build",
-    "dev": "turbo run dev",
-    "start": "turbo run start",
+    "dev": "dotenv -- turbo run dev",
+    "start": "dotenv -- turbo run start",
     "lint": "turbo run lint",
     "generate": "turbo run generate",
     "db:seed": "turbo run db:seed",
     "db:push": "turbo run db:push",
     "db:migrate:dev": "turbo run db:migrate:dev",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "prepare": "husky install",
-    "pre-commit": "lint-staged"
+    "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "prisma": {
     "schema": "packages/database/src/prisma/schema.prisma",
@@ -34,7 +32,6 @@
     "stripe": "12.1.1"
   },
   "devDependencies": {
-    "@app/env": "workspace:*",
     "@app/eslint-config": "workspace:*",
     "@app/typescript-config": "workspace:*",
     "@headlessui/react": "1.7.13",
@@ -42,17 +39,10 @@
     "@types/node": "18.15.11",
     "@types/react": "18.0.32",
     "@types/react-dom": "18.0.11",
-    "husky": "8.0.3",
-    "lint-staged": "13.2.2",
+    "dotenv-cli": "7.2.1",
     "prettier": "2.8.8",
     "tsx": "3.12.7",
     "turbo": "1.8.3",
     "typescript": "5.0.3"
-  },
-  "lint-staged": {
-    "**/*.{js,jsx,ts,tsx}": [
-      "eslint --fix",
-      "prettier --write"
-    ]
   }
 }

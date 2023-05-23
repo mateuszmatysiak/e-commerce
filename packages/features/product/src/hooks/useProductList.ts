@@ -1,10 +1,11 @@
 import { useQuery } from "@tanstack/react-query";
-import ky, { HTTPError } from "ky-universal";
+import { HTTPError } from "ky-universal";
 
 import { type Product } from "@app/database";
+import { fetcher } from "@app/utils";
 
-const fetchProductList = async (): Promise<Product[]> => {
-  return await ky(`/api/productList`).json();
+const fetchProductList = async () => {
+  return await fetcher<Product[]>(`/api/productList`);
 };
 
 const useProductList = () => {

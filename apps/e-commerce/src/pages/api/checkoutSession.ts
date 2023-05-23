@@ -1,9 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { Stripe } from "stripe";
 
-import { getEnv } from "@app/env";
-
-const stripe = new Stripe(getEnv("STRIPE_SECRET_KEY"), {
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
   apiVersion: "2022-11-15",
 });
 
