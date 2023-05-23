@@ -11,9 +11,7 @@
     "db:seed": "turbo run db:seed",
     "db:push": "turbo run db:push",
     "db:migrate:dev": "turbo run db:migrate:dev",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "prepare": "husky install",
-    "pre-commit": "lint-staged"
+    "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "prisma": {
     "schema": "packages/database/src/prisma/schema.prisma",
