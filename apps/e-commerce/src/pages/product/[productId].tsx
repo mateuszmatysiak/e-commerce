@@ -1,6 +1,5 @@
 import { QueryClient, dehydrate } from "@tanstack/react-query";
 import Head from "next/head";
-import { useRouter } from "next/router";
 import { GetStaticPaths, GetStaticProps } from "next/types";
 
 import { ProductDetails, fetchProductDetails, useProductDetails } from "@app/features-product";
@@ -8,14 +7,11 @@ import { EmptyPage, ErrorPage } from "@app/ui";
 import { getQueryAsString } from "@app/utils";
 
 export default function ProductPage() {
-  const { query } = useRouter();
   const { data: product, error } = useProductDetails();
-
-  const productId = getQueryAsString(query.productId);
 
   if (error) return <ErrorPage>{error.message}</ErrorPage>;
 
-  if (!product) return <EmptyPage>{`Nie znaleziono produktu o id: ${productId}`}</EmptyPage>;
+  if (!product) return <EmptyPage>Ładowanie...</EmptyPage>;
 
   return (
     <>

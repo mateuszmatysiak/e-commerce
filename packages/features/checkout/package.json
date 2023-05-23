@@ -9,6 +9,7 @@
   "dependencies": {
     "@app/ui": "workspace:*",
     "@app/database": "workspace:*",
+    "@app/utils": "workspace:*",
     "@app/tailwind-config": "workspace:*",
     "@stripe/stripe-js": "1.52.1"
   },
