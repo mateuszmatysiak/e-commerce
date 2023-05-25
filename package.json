@@ -11,7 +11,9 @@
     "db:seed": "turbo run db:seed",
     "db:push": "turbo run db:push",
     "db:migrate:dev": "turbo run db:migrate:dev",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "prepare": "husky install",
+    "pre-commit": "lint-staged"
   },
   "prisma": {
     "schema": "packages/database/src/prisma/schema.prisma",
@@ -43,6 +45,14 @@
     "prettier": "2.8.8",
     "tsx": "3.12.7",
     "turbo": "1.8.3",
-    "typescript": "5.0.3"
+    "typescript": "5.0.3",
+    "husky": "8.0.0",
+    "lint-staged": "13.2.2"
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ]
   }
 }
