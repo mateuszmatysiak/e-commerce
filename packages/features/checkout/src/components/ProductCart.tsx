@@ -15,7 +15,7 @@ export const ProductCart = ({ product, onDeleteProduct }: ProductCartProps) => {
   return (
     <li className="flex items-center justify-between gap-4 py-4">
       <div className="flex items-center gap-4">
-        <div className="relative border border-gray-200 rounded-md w-24 min-w-[6rem] h-20 overflow-hidden">
+        <div className="relative h-20 w-24 min-w-[6rem] overflow-hidden rounded-md border border-gray-200">
           <Image
             src={image}
             alt={name}
@@ -23,7 +23,7 @@ export const ProductCart = ({ product, onDeleteProduct }: ProductCartProps) => {
             sizes="(max-width: 768px) 100vw,
               (max-width: 1200px) 50vw,
               33vw"
-            className="object-contain bg-white"
+            className="bg-white object-contain"
             priority
           />
         </div>
@@ -32,7 +32,7 @@ export const ProductCart = ({ product, onDeleteProduct }: ProductCartProps) => {
           <Link href={`/product/${id}`} className="hover:text-blue-700">
             {name}
           </Link>
-          <p className="text-sm text-gray-500 line-clamp-2">{description}</p>
+          <p className="line-clamp-2 text-sm text-gray-500">{description}</p>
         </div>
       </div>
 

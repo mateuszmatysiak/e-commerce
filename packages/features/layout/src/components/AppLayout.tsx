@@ -16,7 +16,7 @@ interface AppLayoutProps {
 
 export const AppLayout = ({ children }: AppLayoutProps) => {
   return (
-    <div className={`min-h-screen flex flex-col ${karla.variable} font-sans`}>
+    <div className={`flex min-h-screen flex-col ${karla.variable} font-sans`}>
       <AppHeader />
       <AppMain>{children}</AppMain>
       <AppFooter />

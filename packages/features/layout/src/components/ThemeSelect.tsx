@@ -17,7 +17,7 @@ export const ThemeSelect = () => {
       {({ open }) => (
         <>
           <Listbox.Button
-            className={`relative rounded-md bg-blue-600 text-white py-2 pl-6 pr-12 text-left hover:bg-blue-700 ${
+            className={`relative rounded-md bg-blue-600 py-2 pl-6 pr-12 text-left text-white hover:bg-blue-700 ${
               open ? "bg-blue-700" : ""
             }`}
           >

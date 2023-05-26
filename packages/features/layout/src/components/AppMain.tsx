@@ -6,7 +6,7 @@ interface AppMainProps {
 
 export const AppMain = ({ children }: AppMainProps) => {
   return (
-    <main className="flex-1 max-w-screen-xl w-full mx-auto pt-28 pb-12 px-8 bg-gray-100 dark:bg-slate-900">
+    <main className="mx-auto w-full max-w-screen-xl flex-1 bg-gray-100 px-8 pb-12 pt-28 dark:bg-slate-900">
       {children}
     </main>
   );

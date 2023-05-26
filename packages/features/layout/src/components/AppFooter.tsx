@@ -4,8 +4,8 @@ export const AppFooter = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="flex justify-between items-center gap-8 max-w-screen-xl w-full mx-auto p-8 bg-gray-100 border-t border-t-gray-200 dark:bg-slate-900 dark:border-t-slate-800">
-      <div className="text-gray-500 text-sm">© {currentYear} Sklep internetowy</div>
+    <footer className="mx-auto flex w-full max-w-screen-xl items-center justify-between gap-8 border-t border-t-gray-200 bg-gray-100 p-8 dark:border-t-slate-800 dark:bg-slate-900">
+      <div className="text-sm text-gray-500">© {currentYear} Sklep internetowy</div>
 
       <ThemeSelect />
     </footer>

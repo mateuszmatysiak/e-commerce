@@ -11,7 +11,7 @@ export const ProductCarts = () => {
   };
 
   return (
-    <ul className="flex flex-col max-h-96 pr-4 -mr-4 divide-y overflow-y-auto">
+    <ul className="-mr-4 flex max-h-96 flex-col divide-y overflow-y-auto pr-4">
       {products.map((product, productIndex) => (
         <ProductCart
           key={`${productIndex}.${product.id}`}

@@ -14,18 +14,18 @@ export const AppHeader = () => {
   const isSignInPage = pathname.includes("/auth/sign-in"); // TODO: change hardcoded url
 
   return (
-    <header className="fixed inset-x-0 flex justify-between items-center gap-8 w-full max-w-screen-xl h-20 mx-auto px-8 bg-gray-100 border-b border-b-gray-200 z-10 dark:bg-slate-900 dark:border-b-slate-800">
+    <header className="fixed inset-x-0 z-10 mx-auto flex h-20 w-full max-w-screen-xl items-center justify-between gap-8 border-b border-b-gray-200 bg-gray-100 px-8 dark:border-b-slate-800 dark:bg-slate-900">
       <Link
         href="/"
-        className="font-light text-gray-600 dark:text-gray-400 hover:text-blue-700 hover:dark:text-blue-700"
+        className="font-light text-gray-600 hover:text-blue-700 dark:text-gray-400 hover:dark:text-blue-700"
       >
         Sklep internetowy
       </Link>
 
       <div className="flex gap-8">
         {status === "loading" ? (
-          <div className="flex justify-center items-center w-10 h-10 rounded-full bg-gray-300 dark:bg-slate-800">
-            <ArrowPathIcon className="w-4 h-4 animate-spin" />
+          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-300 dark:bg-slate-800">
+            <ArrowPathIcon className="h-4 w-4 animate-spin" />
           </div>
         ) : null}
 
