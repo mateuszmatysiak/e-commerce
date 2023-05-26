@@ -9,6 +9,9 @@
   "dependencies": {
     "@app/tailwind-config": "workspace:*"
   },
+  "devDependencies": {
+    "tailwind-merge": "1.12.0"
+  },
   "eslintConfig": {
     "extends": [
       "@app/eslint-config/base"
