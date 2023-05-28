@@ -1,7 +1,6 @@
 import { ArrowPathIcon } from "@heroicons/react/20/solid";
 import { signIn, useSession } from "next-auth/react";
 import Link from "next/link";
-import { useRouter } from "next/router";
 
 import { Checkout } from "@app/features-checkout";
 import { Button } from "@app/ui";
@@ -9,9 +8,6 @@ import { AccountMenu } from "./AccountMenu";
 
 export const AppHeader = () => {
   const { status } = useSession();
-  const { pathname } = useRouter();
-
-  const isSignInPage = pathname.includes("/auth/sign-in"); // TODO: change hardcoded url
 
   return (
     <header className="fixed inset-x-0 z-10 mx-auto flex h-20 w-full max-w-screen-xl items-center justify-between gap-8 border-b border-b-gray-200 bg-gray-100 px-8 dark:border-b-slate-800 dark:bg-slate-900">
@@ -31,11 +27,11 @@ export const AppHeader = () => {
 
         {status === "authenticated" ? <AccountMenu /> : null}
 
-        {!isSignInPage && status === "unauthenticated" ? (
+        {status === "unauthenticated" ? (
           <Button onClick={() => signIn()}>Zaloguj się</Button>
         ) : null}
 
-        {!isSignInPage ? <Checkout /> : null}
+        <Checkout />
       </div>
     </header>
   );
