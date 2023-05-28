@@ -5,5 +5,6 @@ declare namespace NodeJS {
     NEXTAUTH_SECRET: string;
     STRIPE_SECRET_KEY: string;
     DATEBASE_URL: string;
+    NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY: string;
   }
 }
