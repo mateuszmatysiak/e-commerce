@@ -77,6 +77,9 @@ importers:
       prettier-plugin-tailwindcss:
         specifier: 0.2.4
         version: 0.2.4(prettier@2.8.8)
+      tailwind-merge:
+        specifier: 1.12.0
+        version: 1.12.0
       tsx:
         specifier: 3.12.7
         version: 3.12.7
@@ -227,10 +230,6 @@ importers:
       '@app/tailwind-config':
         specifier: workspace:*
         version: link:../config/tailwind
-    devDependencies:
-      tailwind-merge:
-        specifier: 1.12.0
-        version: 1.12.0
 
   packages/utils:
     dependencies:
