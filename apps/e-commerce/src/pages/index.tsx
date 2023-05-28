@@ -2,7 +2,12 @@ import { QueryClient, dehydrate } from "@tanstack/react-query";
 import Head from "next/head";
 import { GetStaticProps } from "next/types";
 
-import { ProductList, fetchProductList, useProductList } from "@app/features-product";
+import {
+  ProductList,
+  ProductSlider,
+  fetchProductList,
+  useProductList,
+} from "@app/features-product";
 import { EmptyPage, ErrorPage } from "@app/ui";
 
 export default function ProductListPage() {
@@ -20,7 +25,33 @@ export default function ProductListPage() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <ProductList products={products} />
+
+      <div className="flex flex-col gap-8">
+        <div className="relative flex min-h-[50vh] items-center text-center md:px-6">
+          <div className="flex flex-col items-center gap-8">
+            <h1 className="text-5xl">Wygodne zakupy online zawsze pod ręką</h1>
+
+            <p className="text-2xl">
+              Zapraszamy do naszego sklepu internetowego, gdzie czeka na Ciebie szeroki wybór
+              produktów, konkurencyjne ceny i wygodne zakupy online.
+            </p>
+          </div>
+        </div>
+
+        <div className="flex flex-col gap-24">
+          <div>
+            <h2 className="text-3xl">Popularne produkty</h2>
+
+            <ProductSlider products={products} className="py-4" />
+          </div>
+
+          <div>
+            <h2 className="text-3xl">Pozostałe produkty</h2>
+
+            <ProductList products={products} className="py-4" />
+          </div>
+        </div>
+      </div>
     </>
   );
 }
