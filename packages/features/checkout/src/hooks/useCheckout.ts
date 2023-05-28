@@ -35,7 +35,7 @@ const checkoutCart = async (products: Product[]) => {
 };
 
 const redirectToCheckout = async (session: CheckoutSessionId) => {
-  const stripe = await loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!);
+  const stripe = await loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY);
 
   if (!stripe) throw new Error("Stripe cannot be loaded.");
 
