@@ -4,7 +4,8 @@
   "main": "src/index.ts",
   "scripts": {
     "generate": "prisma generate --schema=src/prisma/schema.prisma",
-    "db:migrate:dev": "prisma migrate dev --name init --schema=src/prisma/schema.prisma",
+    "db:migrate:dev": "prisma migrate dev --schema=src/prisma/schema.prisma",
+    "db:migrate:deploy": "prisma migrate deploy --schema=src/prisma/schema.prisma",
     "db:seed": "tsx src/prisma/seed.ts",
     "db:push": "prisma db push --schema=src/prisma/schema.prisma",
     "lint": "eslint --fix"
