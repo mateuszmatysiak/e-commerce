@@ -1,5 +1,6 @@
 import { QueryClient, dehydrate } from "@tanstack/react-query";
 import Head from "next/head";
+import Link from "next/link";
 import { GetStaticProps } from "next/types";
 
 import {
@@ -10,7 +11,7 @@ import {
 } from "@app/features-product";
 import { EmptyPage, ErrorPage } from "@app/ui";
 
-export default function ProductListPage() {
+export default function HomePage() {
   const { data: products, error } = useProductList();
 
   if (error) return <ErrorPage>{error.message}</ErrorPage>;
@@ -35,6 +36,13 @@ export default function ProductListPage() {
               Zapraszamy do naszego sklepu internetowego, gdzie czeka na Ciebie szeroki wybór
               produktów, konkurencyjne ceny i wygodne zakupy online.
             </p>
+
+            <Link
+              href="/products"
+              className="rounded-md border border-blue-500 px-4 py-2 text-blue-500 hover:bg-blue-500 hover:text-white"
+            >
+              Zobacz produkty
+            </Link>
           </div>
         </div>
 
