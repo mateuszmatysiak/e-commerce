@@ -18,7 +18,7 @@ export const AppHeader = () => {
         Sklep internetowy
       </Link>
 
-      <div className="flex gap-8">
+      <div className="flex gap-2 md:gap-8">
         {status === "loading" ? (
           <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-300 dark:bg-slate-800">
             <ArrowPathIcon className="h-4 w-4 animate-spin" />
