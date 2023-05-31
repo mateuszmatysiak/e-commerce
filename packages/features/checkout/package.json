@@ -11,7 +11,7 @@
     "@app/database": "workspace:*",
     "@app/utils": "workspace:*",
     "@app/tailwind-config": "workspace:*",
-    "@stripe/stripe-js": "1.52.1"
+    "@stripe/stripe-js": "^1.52.1"
   },
   "eslintConfig": {
     "extends": [
